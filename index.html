@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Procesador</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      padding-top: 60px;
+    }
+    .calculadora {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 250px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculadora">
+    <input type="number" id="a" placeholder="Valor de A" value="0">
+    <input type="number" id="b" placeholder="Valor de B">
+
+    <button onclick="procesar()">Sumar</button>
+  </div>
+
+  <script>
+    function procesar() {
+      let inputA = document.getElementById("a");
+      let inputB = document.getElementById("b");
+
+      let a = parseFloat(inputA.value);
+      let b = parseFloat(inputB.value);
+
+      if (isNaN(a) || isNaN(b)) return;
+
+      let c = a + b;
+
+      inputA.value = c;  
+      inputB.value = ""; 
+    }
+  </script>
+</body>
+</html>
